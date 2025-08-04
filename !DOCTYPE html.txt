@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="description" content="JAIN International Residential School - Shaping Global Citizens with Excellence in Education" />
+<meta name="keywords" content="JAIN International Residential School, CBSE, Boarding School, International School, Education" />
+<meta name="author" content="JAIN International Residential School" />
+<title>JAIN International Residential School</title>
+<style>
+  /* Reset & base */
+  * {
+    box-sizing: border-box;
+    margin: 0; padding: 0;
+  }
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #003366; /* deep blue */
+    background: #fff;
+  }
+  a {
+    color: #bfa03a; /* gold */
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  a:hover, a:focus {
+    color: #8c7500;
+  }
+
+  /* Container */
+  .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+  }
+
+  /* Nav */
+  nav {
+    background: #003366;
+    color: white;
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+  }
+  nav .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  nav .logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    color: #bfa03a; /* gold */
+  }
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.6rem;
+  }
+  nav ul li a {
+    font-weight: 600;
+    color: white;
+    font-size: 1rem;
+  }
+  nav ul li a:hover {
+    color: #bfa03a;
+  }
+
+  /* Mobile nav toggle */
+  .nav-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+  }
+  .nav-toggle span {
+    background: white;
+    height: 3px;
+    width: 25px;
+    margin-bottom: 5px;
+    border-radius: 2px;
+  }
+
+  /* Hero */
+  .hero {
+    background: url('https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1470&q=80') no-repeat center center/cover;
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    color: white;
+    text-shadow: 1.5px 1.5px 6px rgba(0,0,0,0.8);
+  }
+  .hero .content {
+    max-width: 700px;
+    margin-left: 3rem;
+  }
+  .hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+  .hero p {
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+  }
+  .btn-primary {
+    background-color: #bfa03a;
+    color: #003366;
+    font-weight: 700;
+    padding: 0.8rem 2rem;
+    border-radius: 25px;
+    border: none;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 12px rgba(191,160,58,0.4);
+  }
+  .btn-primary:hover, .btn-primary:focus {
+    background-color: #8c7500;
+    color: white;
+  }
+
+  /* Sections */
+  section {
+    padding: 4rem 0;
+  }
+  section h2 {
+    text-align: center;
+    font-size: 2.2rem;
+    margin-bottom: 2rem;
+    color: #003366;
+    font-weight: 700;
+    letter-spacing: 1.1px;
+  }
+
+  /* About */
+  .about .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+    gap: 2rem;
+    max-width: 900px;
+    margin: auto;
+  }
+  .about .grid div {
+    background: #f9f9f9;
+    border-left: 5px solid #bfa03a;
+    padding: 1.5rem 2rem;
+    font-size: 1.1rem;
+    color: #003366;
+    box-shadow: 0 4px 8px rgb(191 160 58 / 0.2);
+    border-radius: 8px;
+  }
+
+  /* Testimonials */
+  .testimonials {
+    background: #003366;
+    color: white;
+  }
+  .testimonials .container {
+    max-width: 900px;
+  }
+  .testimonial-item {
+    margin-bottom: 2rem;
+    font-style: italic;
+    position: relative;
+    padding-left: 2rem;
+  }
+  .testimonial-item::before {
+    content: "“";
+    font-size: 3rem;
+    position: absolute;
+    left: 0;
+    top: -10px;
+    color: #bfa03a;
+  }
+  .testimonial-author {
+    margin-top: 0.5rem;
+    font-weight: 700;
+    color: #f0d370;
+  }
+
+  /* CTA */
+  .cta {
+    text-align: center;
+    background: #f9f9f9;
+    padding: 3rem 1rem;
+  }
+  .cta p {
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+    color: #003366;
+  }
+
+  /* Map */
+  .map {
+    margin: 2rem auto;
+    max-width: 900px;
+    height: 400px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgb(191 160 58 / 0.3);
+  }
+  iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+
+  /* Footer */
+  footer {
+    background: #003366;
+    color: white;
+    padding: 2rem 0 1rem;
+    font-size: 0.9rem;
+  }
+  footer .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  footer .contact-info {
+    max-width: 400px;
+  }
+  footer .social-links a {
+    margin-right: 1rem;
+    color: #bfa03a;
+    font-size: 1.3rem;
+  }
+  footer .newsletter input[type="email"] {
+    padding: 0.6rem 1rem;
+    border-radius: 25px 0 0 25px;
+    border: none;
+    outline: none;
+    width: 200px;
+  }
+  footer .newsletter button {
+    background: #bfa03a;
+    color: #003366;
+    border: none;
+    padding: 0.6rem 1.5rem;
+    border-radius: 0 25px 25px 0;
+    cursor: pointer;
+    font-weight: 700;
+    transition: background-color 0.3s ease;
+  }
+  footer .newsletter button:hover {
+    background: #8c7500;
+    color: white;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    nav .container {
+      flex-wrap: wrap;
+    }
+    nav ul {
+      display: none;
+      flex-direction: column;
+      width: 100%;
+      margin-top: 1rem;
+      background: #003366;
+      border-radius: 0 0 8px 8px;
+    }
+    nav ul.show {
+      display: flex;
+    }
+    .nav-toggle {
+      display: flex;
+    }
+    .hero .content {
+      margin-left: 1rem;
+      padding-right: 1rem;
+    }
+    .hero h1 {
+      font-size: 2rem;
+    }
+    section {
+      padding: 2rem 1rem;
+    }
+    footer .container {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+    footer .newsletter input[type="email"] {
+      width: 100%;
+      border-radius: 25px;
+      margin-bottom: 0.5rem;
+    }
+    footer .newsletter button {
+      width: 100%;
+      border-radius: 25px;
+    }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="container">
+    <div class="logo" tabindex="0">JAIN International Residential School</div>
+    <div class="nav-toggle" aria-label="Toggle menu" role="button" tabindex="0">
+      <span></span><span></span><span></span>
+    </div>
+    <ul>
+      <li><a href="#about">About Us</a></li>
+      <li><a href="#academics">Academics</a></li>
+      <li><a href="#campus-life">Campus Life</a></li>
+      <li><a href="#admissions">Admissions</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero" role="banner" aria-label="Hero section with school image and headline">
+  <div class="content">
+    <h1>Shaping Global Citizens with Excellence in Education</h1>
+    <p>Welcome to JAIN International Residential School – A premium academic & international boarding experience.</p>
+    <button class="btn-primary" onclick="document.location='#admissions'">Apply Now</button>
+  </div>
+</header>
+
+<main>
+  <section id="about" class="about" aria-labelledby="about-title">
+    <h2 id="about-title">About JIRS</h2>
+    <div class="grid" role="list">
+      <div role="listitem"><strong>CBSE Curriculum:</strong> Comprehensive and modern curriculum designed for academic excellence.</div>
+      <div role="listitem"><strong>World-class Infrastructure:</strong> State-of-the-art classrooms, labs, and sports facilities.</div>
+      <div role="listitem"><strong>20+ Years of Excellence:</strong> Trusted legacy nurturing students since 2000.</div>
+      <div role="listitem"><strong>International Community:</strong> Diverse student body from across the globe promoting cross-cultural understanding.</div>
+    </div>
+  </section>
+
+  <section id="academics" aria-label="Academics highlights" style="padding: 0 0 4rem 0; max-width: 900px; margin: auto;">
+    <h2>Academics & Campus Life</h2>
+    <p style="text-align:center; font-size:1.15rem; color:#003366;">
+      At JIRS, we combine rigorous academics with vibrant campus life. Our dedicated faculty ensures personalized attention, while extracurriculars and clubs foster leadership, creativity, and wellness.
+    </p>
+  </section>
+
+  <section id="testimonials" class="testimonials" aria-labelledby="testimonials-title">
+    <h2 id="testimonials-title">What Our Community Says</h2>
+    <div class="container">
+      <div class="testimonial-item">
+        "JIRS has transformed my child's outlook towards education and life. The international exposure is unmatched."
+        <div class="testimonial-author">– Parent of a Grade 10 Student</div>
+      </div>
+      <div class="testimonial-item">
+        "The school's emphasis on holistic development helped me grow both academically and personally."
+        <div class="testimonial-author">– Alumni, Class of 2020</div>
+      </div>
+      <div class="testimonial-item">
+        "Living on campus gave me lifelong friendships and experiences I cherish."
+        <div class="testimonial-author">– Current Student, Grade 12</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="admissions" class="cta" aria-label="Admissions call to action">
+    <p>Ready to join JIRS? Experience a premier international boarding education.</p>
+    <button class="btn-primary" onclick="document.location='#contact'">Schedule a Visit</button>
+  </section>
+
+  <section id="contact" aria-label="Contact and location">
+    <h2 style="text-align:center; margin-bottom: 1.5rem;">Find Us Here</h2>
+    <div class="map" role="region" aria-label="Google Maps location of JAIN International Residential School">
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3890.525273555032!2d75.35560231537999!3d12.62834409142181!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba5cc1679b21e25%3A0x6be22069111eeaa1!2sJain%20International%20Residential%20School!5e0!3m2!1sen!2sin!4v1691143955382!5m2!1sen!2sin" 
+        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" 
+        title="JAIN International Residential School Location"
+      ></iframe>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="contact-info" aria-label="Contact information">
+      <p><strong>Contact Us</strong></p>
+      <p>Email: <a href="mailto:info@jirs.edu.in">info@jirs.edu.in</a></p>
+      <p>Phone: +91 12345 67890</p>
+      <p>Address: Jain International Residential School, Mysore, India</p>
+    </div>
+    <div class="social-links" aria-label="Social media links">
+      <a href="https://facebook.com/jirs" target="_blank" rel="noopener" aria-label="Facebook">&#x1F426;</a>
+      <a href="https://twitter.com/jirs" target="_blank" rel="noopener" aria-label="Twitter">&#x1F426;</a>
+      <a href="https://instagram.com/jirs" target="_blank" rel="noopener" aria-label="Instagram">&#x1F426;</a>
+    </div>
+    <form class="newsletter" aria-label="Newsletter signup">
+      <input type="email" placeholder="Enter your email" aria-label="Email address" required />
+      <button type="submit">Subscribe</button>
+    </form>
+  </div>
+</footer>
+
+<script>
+  // Mobile nav toggle
+  const toggleButton = document.querySelector('.nav-toggle');
+  const navLinks = document.querySelector('nav ul');
+
+  toggleButton.addEventListener('click', () => {
+    navLinks.classList.toggle('show');
+  });
+
+  // Keyboard accessible toggle
+  toggleButton.addEventListener('keydown', (e) => {
+    if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
+      navLinks.classList.toggle('show');
+    }
+  });
+
+  // Newsletter form - simple alert simulation
+  const newsletterForm = document.querySelector('.newsletter');
+  newsletterForm.addEventListener('submit', e => {
+    e.preventDefault();
+    const email = newsletterForm.querySelector('input[type="email"]').value;
+    if(email){
+      alert(`Thank you for subscribing, ${email}!`);
+      newsletterForm.reset();
+    }
+  });
+</script>
+
+</body>
+</html>
